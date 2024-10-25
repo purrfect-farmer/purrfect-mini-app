@@ -21,7 +21,7 @@ function App() {
         <h1 className="text-3xl leading-none text-center text-orange-500 font-turret-road">
           Purrfect
         </h1>
-        <p className="text-center text-neutral-500">Your purrfect little bot</p>
+        <p className="text-center">Your purrfect little bot</p>
         <button
           onClick={handleButtonClick}
           className="px-4 py-2 text-white bg-orange-500 rounded-lg hover:bg-orange-600"
