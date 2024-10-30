@@ -1,5 +1,7 @@
 import { useCallback, useEffect } from "react";
+
 import Icon from "./assets/images/icon.png?format=webp&w=256";
+
 function App() {
   const handleButtonClick = useCallback(() => {
     window.Telegram?.WebApp?.openTelegramLink(
@@ -9,7 +11,6 @@ function App() {
 
   /** Configure Telegram App */
   useEffect(() => {
-    window.Telegram?.WebApp?.enableClosingConfirmation();
     window.Telegram?.WebApp?.disableVerticalSwipes();
     window.Telegram?.WebApp?.expand();
   }, []);
