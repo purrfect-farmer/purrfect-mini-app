@@ -2,6 +2,7 @@ import { useCallback, useEffect } from "react";
 
 import Icon from "./assets/images/icon.png?format=webp&w=256";
 import copy from "copy-to-clipboard";
+import { cn } from "./lib/utils";
 
 function App() {
   /** Open Telegram Link */
@@ -40,20 +41,41 @@ function App() {
 
   return (
     <div className="flex flex-col p-4 min-h-dvh">
-      <div className="flex flex-col w-full max-w-xs gap-2 m-auto">
+      <div className="flex flex-col w-full max-w-xs gap-4 m-auto">
+        {/* Logo */}
         <img src={Icon} className="mx-auto w-28 h-28" />
-        <h1 className="text-3xl leading-none text-center text-orange-500 font-turret-road">
-          Purrfect
-        </h1>
-        <p
-          className="mx-auto text-center text-orange-500 truncate"
-          onClick={copyUsername}
-        >
-          @
-          {window.Telegram?.WebApp?.initDataUnsafe?.user?.username ||
-            "purrfect_little_bot"}
-        </p>
-        <p className="text-center">Your purrfect little bot</p>
+
+        <div className="flex flex-col">
+          {/* Title */}
+          <h1 className="text-3xl leading-none text-center text-orange-500 font-turret-road">
+            Purrfect
+          </h1>
+
+          {/* Intro */}
+          <p className="text-center">
+            <span
+              className={cn(
+                "text-transparent",
+                "bg-clip-text",
+                "bg-gradient-to-r from-green-500 to-violet-500"
+              )}
+            >
+              Your Little Bot
+            </span>
+          </p>
+
+          {/* Username */}
+          <p
+            className="w-4/5 mx-auto text-center text-orange-500 truncate"
+            onClick={copyUsername}
+          >
+            @
+            {window.Telegram?.WebApp?.initDataUnsafe?.user?.username ||
+              "purrfect_little_bot"}
+          </p>
+        </div>
+
+        {/* Links */}
         <div className="flex flex-col gap-2">
           <button
             onClick={openChannel}
