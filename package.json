@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@fontsource/turret-road": "^5.1.0",
+    "copy-to-clipboard": "^3.3.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
