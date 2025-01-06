@@ -1,7 +1,7 @@
+import copy from "copy-to-clipboard";
 import { useCallback, useEffect } from "react";
 
 import Icon from "./assets/images/icon.png?format=webp&w=256";
-import copy from "copy-to-clipboard";
 import { cn } from "./lib/utils";
 
 function App() {
@@ -66,7 +66,7 @@ function App() {
 
           {/* Username */}
           <p
-            className="w-4/5 mx-auto text-center text-orange-500 truncate"
+            className="w-4/5 mx-auto text-sm text-center text-orange-500 truncate"
             onClick={copyUsername}
           >
             @
@@ -79,13 +79,13 @@ function App() {
         <div className="flex flex-col gap-2">
           <button
             onClick={openChannel}
-            className="px-4 py-2 text-white bg-purple-500 rounded-xl hover:bg-purple-600"
+            className="px-4 py-2 text-sm text-white bg-orange-500 rounded-xl hover:bg-orange-600"
           >
             Open Channel
           </button>
           <button
             onClick={openChat}
-            className="px-4 py-2 text-white rounded-xl bg-lime-500 hover:bg-lime-600"
+            className="px-4 py-2 text-sm text-black rounded-xl bg-lime-500 hover:bg-lime-400"
           >
             Join Chat
           </button>
