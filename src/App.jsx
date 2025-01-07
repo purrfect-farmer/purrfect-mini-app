@@ -81,11 +81,11 @@ function App() {
             onClick={openChannel}
             className="px-4 py-2 text-sm text-white bg-orange-500 rounded-xl hover:bg-orange-600"
           >
-            Open Channel
+            Open Community
           </button>
           <button
             onClick={openChat}
-            className="px-4 py-2 text-sm text-black rounded-xl bg-lime-500 hover:bg-lime-400"
+            className="px-4 py-2 text-sm text-white rounded-xl bg-lime-500 hover:bg-lime-400"
           >
             Join Chat
           </button>
