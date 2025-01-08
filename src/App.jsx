@@ -1,7 +1,7 @@
 import copy from "copy-to-clipboard";
 import { useCallback, useEffect } from "react";
 
-import Icon from "./assets/images/icon.png?format=webp&w=256";
+import Icon from "./assets/images/icon-unwrapped-cropped.png?format=webp&h=256";
 import { cn } from "./lib/utils";
 
 function App() {
@@ -43,49 +43,42 @@ function App() {
     <div className="flex flex-col p-4 min-h-dvh">
       <div className="flex flex-col w-full max-w-xs gap-4 m-auto">
         {/* Logo */}
-        <img src={Icon} className="mx-auto w-28 h-28" />
+        <img src={Icon} className="h-24 mx-auto" />
 
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-2">
           {/* Title */}
           <h1 className="text-3xl leading-none text-center text-orange-500 font-turret-road">
             Purrfect
           </h1>
 
-          {/* Intro */}
-          <p className="text-center">
-            <span
-              className={cn(
-                "text-transparent",
-                "bg-clip-text",
-                "bg-gradient-to-r from-green-500 to-violet-500"
-              )}
-            >
-              Your Little Bot
-            </span>
-          </p>
-
           {/* Username */}
-          <p
-            className="w-4/5 mx-auto text-sm text-center text-orange-500 truncate"
-            onClick={copyUsername}
-          >
-            @
-            {window.Telegram?.WebApp?.initDataUnsafe?.user?.username ||
-              "purrfect_little_bot"}
-          </p>
+          <div className="flex justify-center w-4/5 mx-auto">
+            <p
+              className={cn(
+                "bg-orange-200 text-orange-600",
+                "px-2 py-1 rounded-full",
+                "text-sm font-bold text-center truncate"
+              )}
+              onClick={copyUsername}
+            >
+              @
+              {window.Telegram?.WebApp?.initDataUnsafe?.user?.username ||
+                "purrfect_little_bot"}
+            </p>
+          </div>
         </div>
 
         {/* Links */}
         <div className="flex flex-col gap-2">
           <button
             onClick={openChannel}
-            className="px-4 py-2 text-sm text-white bg-orange-500 rounded-xl hover:bg-orange-600"
+            className="px-4 py-2 text-sm font-bold text-white bg-orange-500 rounded-xl"
           >
             Open Community
           </button>
           <button
             onClick={openChat}
-            className="px-4 py-2 text-sm text-white rounded-xl bg-lime-500 hover:bg-lime-400"
+            className="px-4 py-2 text-sm font-bold text-white rounded-xl bg-lime-500"
           >
             Join Chat
           </button>
