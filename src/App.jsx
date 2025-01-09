@@ -72,13 +72,13 @@ function App() {
         <div className="flex flex-col gap-2">
           <button
             onClick={openChannel}
-            className="px-4 py-2 text-sm font-bold text-white bg-orange-500 rounded-xl"
+            className="px-4 py-2 text-sm font-bold text-white bg-orange-500 rounded-full"
           >
             Open Community
           </button>
           <button
             onClick={openChat}
-            className="px-4 py-2 text-sm font-bold text-white rounded-xl bg-lime-500"
+            className="px-4 py-2 text-sm font-bold text-white rounded-full bg-lime-500"
           >
             Join Chat
           </button>
