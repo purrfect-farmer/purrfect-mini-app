@@ -4,9 +4,6 @@ import { useCallback, useEffect } from "react";
 import Icon from "./assets/images/icon-unwrapped-cropped.png?format=webp&h=256";
 
 function App() {
-  /** User */
-  const user = window.Telegram?.WebApp?.initDataUnsafe?.user;
-
   /** Open Telegram Link */
   const openTelegramLink = useCallback(
     (link) => window.Telegram?.WebApp?.openTelegramLink(link),
@@ -25,8 +22,14 @@ function App() {
 
   /** Copy Username */
   const copyUsername = useCallback(
-    () => copy(`@${user?.username || "purrfect_little_bot"}`),
-    [user?.username]
+    () =>
+      copy(
+        `@${
+          window.Telegram?.WebApp?.initDataUnsafe?.user?.username ||
+          "purrfect_little_bot"
+        }`
+      ),
+    []
   );
 
   /** Configure Telegram App */
@@ -48,20 +51,33 @@ function App() {
           </h1>
 
           <div className="flex gap-2 p-2 rounded-lg bg-neutral-900">
+            {/* User Photo */}
             <img
               className="rounded-full shrink-0 w-9 h-9"
-              src={user?.["photo_url"]}
+              src={window.Telegram?.WebApp?.initDataUnsafe?.user?.["photo_url"]}
             />
 
             <div className="flex flex-col min-w-0 min-h-0 text-sm grow">
+              {/* First and Last Name */}
               <p className="font-bold text-purple-500">
-                {user?.["first_name"] || "Purrfect"}{" "}
-                {user?.["last_name"] || "Bot"}
+                {window.Telegram?.WebApp?.initDataUnsafe?.user?.[
+                  "first_name"
+                ] || "Purrfect"}{" "}
+                {window.Telegram?.WebApp?.initDataUnsafe?.user?.["last_name"] ||
+                  "Bot"}
               </p>
+
+              {/* Username */}
               <p onClick={copyUsername} className="font-bold text-yellow-500">
-                @{user?.username || "purrfect_little_bot"}
+                @
+                {window.Telegram?.WebApp?.initDataUnsafe?.user?.username ||
+                  "purrfect_little_bot"}
               </p>
-              <p className="font-bold text-lime-500">ID: {user?.id || 1}</p>
+
+              {/* User ID */}
+              <p className="font-bold text-lime-500">
+                ID: {window.Telegram?.WebApp?.initDataUnsafe?.user?.id || 1}
+              </p>
             </div>
           </div>
         </div>
