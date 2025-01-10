@@ -2,9 +2,11 @@ import copy from "copy-to-clipboard";
 import { useCallback, useEffect } from "react";
 
 import Icon from "./assets/images/icon-unwrapped-cropped.png?format=webp&h=256";
-import { cn } from "./lib/utils";
 
 function App() {
+  /** User */
+  const user = window.Telegram?.WebApp?.initDataUnsafe?.user;
+
   /** Open Telegram Link */
   const openTelegramLink = useCallback(
     (link) => window.Telegram?.WebApp?.openTelegramLink(link),
@@ -23,14 +25,8 @@ function App() {
 
   /** Copy Username */
   const copyUsername = useCallback(
-    () =>
-      copy(
-        `@${
-          window.Telegram?.WebApp?.initDataUnsafe?.user?.username ||
-          "purrfect_little_bot"
-        }`
-      ),
-    []
+    () => copy(`@${user?.username || "purrfect_little_bot"}`),
+    [user?.username]
   );
 
   /** Configure Telegram App */
@@ -51,20 +47,24 @@ function App() {
             Purrfect
           </h1>
 
-          {/* Username */}
-          <div className="flex justify-center w-4/5 mx-auto">
-            <p
-              className={cn(
-                "bg-orange-200 text-orange-600",
-                "px-2 py-1 rounded-full",
-                "text-sm font-bold text-center truncate"
-              )}
-              onClick={copyUsername}
-            >
-              @
-              {window.Telegram?.WebApp?.initDataUnsafe?.user?.username ||
-                "purrfect_little_bot"}
-            </p>
+          <div className="flex gap-2 p-2 rounded-lg bg-neutral-900">
+            <img
+              className="rounded-full shrink-0 w-9 h-9"
+              src={user?.["photo_url"]}
+            />
+
+            <div className="flex flex-col min-w-0 min-h-0 text-sm grow">
+              <p className="font-bold text-purple-500">
+                {user?.["first_name"] || "Purrfect"}{" "}
+                {user?.["last_name"] || "Bot"}
+              </p>
+              <p onClick={copyUsername} className="font-bold text-yellow-500">
+                @{user?.username || "purrfect_little_bot"}
+              </p>
+              <p className="font-bold text-lime-500">
+                ID: {user?.username || 1}
+              </p>
+            </div>
           </div>
         </div>
 
