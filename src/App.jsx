@@ -61,9 +61,7 @@ function App() {
               <p onClick={copyUsername} className="font-bold text-yellow-500">
                 @{user?.username || "purrfect_little_bot"}
               </p>
-              <p className="font-bold text-lime-500">
-                ID: {user?.username || 1}
-              </p>
+              <p className="font-bold text-lime-500">ID: {user?.id || 1}</p>
             </div>
           </div>
         </div>
