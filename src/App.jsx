@@ -31,7 +31,7 @@ function App() {
           <div className="flex items-center gap-2 p-3 rounded-full bg-neutral-900">
             {/* User Photo */}
             <img
-              className="w-12 h-12 rounded-full shrink-0"
+              className="rounded-full w-11 h-11 shrink-0"
               src={window.Telegram?.WebApp?.initDataUnsafe?.user?.["photo_url"]}
             />
 
