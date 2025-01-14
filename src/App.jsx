@@ -4,31 +4,9 @@ import { useCallback, useEffect } from "react";
 import Icon from "./assets/images/icon-unwrapped-cropped.png?format=webp&h=256";
 
 function App() {
-  /** Open Telegram Link */
-  const openTelegramLink = useCallback(
-    (link) => window.Telegram?.WebApp?.openTelegramLink(link),
-    []
-  );
-
-  /** Open Channel */
-  const openChannel = useCallback(() => {
-    openTelegramLink("https://t.me/purrfect_community");
-  }, [openTelegramLink]);
-
-  /** Open Chat */
-  const openChat = useCallback(() => {
-    openTelegramLink("https://t.me/purrfect_group_chat");
-  }, [openTelegramLink]);
-
   /** Copy Username */
   const copyUsername = useCallback(
-    () =>
-      copy(
-        `@${
-          window.Telegram?.WebApp?.initDataUnsafe?.user?.username ||
-          "purrfect_little_bot"
-        }`
-      ),
+    () => copy(`@${window.Telegram?.WebApp?.initDataUnsafe?.user?.username}`),
     []
   );
 
@@ -68,34 +46,18 @@ function App() {
               </p>
 
               {/* Username */}
-              <p onClick={copyUsername} className="font-bold text-yellow-500">
-                @
-                {window.Telegram?.WebApp?.initDataUnsafe?.user?.username ||
-                  "purrfect_little_bot"}
-              </p>
+              {window.Telegram?.WebApp?.initDataUnsafe?.user?.username ? (
+                <p onClick={copyUsername} className="font-bold text-yellow-500">
+                  @{window.Telegram?.WebApp?.initDataUnsafe?.user?.username}
+                </p>
+              ) : null}
 
               {/* User ID */}
               <p className="font-bold text-lime-500">
-                ID: {window.Telegram?.WebApp?.initDataUnsafe?.user?.id || 1}
+                ID: {window.Telegram?.WebApp?.initDataUnsafe?.user?.id}
               </p>
             </div>
           </div>
-        </div>
-
-        {/* Links */}
-        <div className="flex flex-col gap-2">
-          <button
-            onClick={openChannel}
-            className="px-4 py-2 text-sm font-bold text-white bg-orange-500 rounded-full"
-          >
-            Open Community
-          </button>
-          <button
-            onClick={openChat}
-            className="px-4 py-2 text-sm font-bold text-white rounded-full bg-lime-500"
-          >
-            Join Chat
-          </button>
         </div>
       </div>
     </div>
