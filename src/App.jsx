@@ -28,7 +28,7 @@ function App() {
             Purrfect
           </h1>
 
-          <div className="flex gap-2 p-4 rounded-lg bg-neutral-900">
+          <div className="flex gap-2 p-3 rounded-full bg-neutral-900">
             {/* User Photo */}
             <img
               className="rounded-full shrink-0 w-9 h-9"
@@ -37,7 +37,7 @@ function App() {
 
             <div className="flex flex-col min-w-0 min-h-0 text-sm grow">
               {/* First and Last Name */}
-              <p className="font-bold text-purple-500">
+              <p className="font-bold text-purple-500 truncate">
                 {window.Telegram?.WebApp?.initDataUnsafe?.user?.[
                   "first_name"
                 ] || "Purrfect"}{" "}
@@ -47,13 +47,16 @@ function App() {
 
               {/* Username */}
               {window.Telegram?.WebApp?.initDataUnsafe?.user?.username ? (
-                <p onClick={copyUsername} className="font-bold text-yellow-500">
+                <p
+                  onClick={copyUsername}
+                  className="font-bold text-yellow-500 truncate"
+                >
                   @{window.Telegram?.WebApp?.initDataUnsafe?.user?.username}
                 </p>
               ) : null}
 
               {/* User ID */}
-              <p className="font-bold text-lime-500">
+              <p className="font-bold truncate text-lime-500">
                 ID: {window.Telegram?.WebApp?.initDataUnsafe?.user?.id}
               </p>
             </div>
