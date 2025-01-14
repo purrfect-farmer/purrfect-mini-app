@@ -28,10 +28,10 @@ function App() {
             Purrfect
           </h1>
 
-          <div className="flex gap-2 p-3 rounded-full bg-neutral-900">
+          <div className="flex items-center gap-2 p-3 rounded-full bg-neutral-900">
             {/* User Photo */}
             <img
-              className="rounded-full shrink-0 w-9 h-9"
+              className="w-12 h-12 rounded-full shrink-0"
               src={window.Telegram?.WebApp?.initDataUnsafe?.user?.["photo_url"]}
             />
 
