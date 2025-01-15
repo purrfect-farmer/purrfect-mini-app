@@ -84,7 +84,7 @@ function App() {
               "text-sm text-center"
             )}
           >
-            Access to the channel and chat is limited. Kindly contact the{" "}
+            Access to Cloud Farming is limited. Kindly contact the{" "}
             <a role="button" onClick={openDevContact} className="font-bold">
               Dev (@sadiqsalau)
             </a>{" "}
