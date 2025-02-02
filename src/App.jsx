@@ -1,8 +1,6 @@
 import copy from "copy-to-clipboard";
 import { useCallback, useEffect } from "react";
-
 import Icon from "./assets/images/icon-unwrapped-cropped.png?format=webp&h=256";
-import { cn } from "./lib/utils";
 
 function App() {
   /** Copy Username */
@@ -73,23 +71,6 @@ function App() {
               </p>
             </div>
           </div>
-
-          {/* Access Information */}
-          <p
-            className={cn(
-              "border border-transparent dark:border-sky-500",
-              "bg-sky-50 dark:bg-transparent",
-              "text-sky-700 dark:text-sky-200",
-              "p-4 px-6 rounded-full",
-              "text-sm text-center"
-            )}
-          >
-            Access to Cloud Farming is limited. Kindly contact the{" "}
-            <a role="button" onClick={openDevContact} className="font-bold">
-              Dev (@sadiqsalau)
-            </a>{" "}
-            to obtain access.
-          </p>
         </div>
       </div>
     </div>
