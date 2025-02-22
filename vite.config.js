@@ -1,5 +1,6 @@
 import path from "path";
 import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
 import { fileURLToPath } from "url";
 import { imagetools } from "vite-imagetools";
@@ -15,5 +16,10 @@ export default defineConfig({
       "~@fontsource": "@fontsource",
     },
   },
-  plugins: [react(), imagetools()],
+  plugins: [
+    /** Plugins */
+    react(),
+    imagetools(),
+    tailwindcss(),
+  ],
 });
