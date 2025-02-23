@@ -8,17 +8,14 @@ import Icon from "./assets/images/icon-unwrapped-cropped.png?format=webp&h=256";
 import { cn } from "./lib/utils";
 
 function App() {
+  /** User */
+  const user = window.Telegram?.WebApp?.initDataUnsafe?.user;
+
   /** Copy Username */
-  const copyUsername = useCallback(
-    () => copy(`@${window.Telegram?.WebApp?.initDataUnsafe?.user?.username}`),
-    []
-  );
+  const copyUsername = useCallback(() => copy(`@${user?.username}`), [user]);
 
   /** Copy User ID */
-  const copyUserId = useCallback(
-    () => copy(window.Telegram?.WebApp?.initDataUnsafe?.user?.id),
-    []
-  );
+  const copyUserId = useCallback(() => copy(user?.id), [user]);
 
   /** Open Telegram Link */
   const openTelegramLink = useCallback(
@@ -58,29 +55,27 @@ function App() {
             {/* User Photo */}
             <img
               className="rounded-full w-11 h-11 shrink-0"
-              src={window.Telegram?.WebApp?.initDataUnsafe?.user?.["photo_url"]}
+              src={user?.["photo_url"]}
             />
 
             <div className="flex flex-col min-w-0 min-h-0 text-sm grow pr-2">
               {/* First and Last Name */}
               <p className="font-bold text-purple-500 truncate">
-                {window.Telegram?.WebApp?.initDataUnsafe?.user?.[
-                  "first_name"
-                ] || "Telegram"}{" "}
-                {window.Telegram?.WebApp?.initDataUnsafe?.user?.["last_name"] ||
-                  "User"}
+                {user?.["first_name"] || user?.["last_name"]
+                  ? `${user?.["first_name"] || ""} ${user?.["last_name"] || ""}`
+                  : " Telegram User"}
               </p>
 
               {/* Username */}
-              {window.Telegram?.WebApp?.initDataUnsafe?.user?.username ? (
+              {user?.username ? (
                 <p onClick={copyUsername} className="text-yellow-500 truncate">
-                  @{window.Telegram?.WebApp?.initDataUnsafe?.user?.username}
+                  @{user?.username}
                 </p>
               ) : null}
 
               {/* User ID */}
               <p onClick={copyUserId} className="truncate text-lime-500">
-                ID: {window.Telegram?.WebApp?.initDataUnsafe?.user?.id}
+                ID: {user?.id}
               </p>
             </div>
           </div>
