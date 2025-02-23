@@ -54,7 +54,7 @@ function App() {
             Purrfect
           </h1>
 
-          <div className="flex items-center gap-4 p-3 rounded-full bg-neutral-900">
+          <div className="flex items-center gap-4 p-3 rounded-full bg-black">
             {/* User Photo */}
             <img
               className="rounded-full w-11 h-11 shrink-0"
