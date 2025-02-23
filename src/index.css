@@ -1,12 +1,11 @@
-@import '@fontsource/turret-road/400' layer(base);
-@import '@fontsource/turret-road/700' layer(base);
+@import "@fontsource/turret-road/400" layer(base);
+@import "@fontsource/turret-road/700" layer(base);
 
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme {
-  --font-sans:
-    Product Sans, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-sans: Product Sans, ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-turret-road: Turret Road;
 }
 
@@ -25,6 +24,26 @@
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before {
+    @apply [&::-webkit-scrollbar]:w-2
+    [&::-webkit-scrollbar]:h-2
+    [&::-webkit-scrollbar-track]:bg-gray-100
+    [&::-webkit-scrollbar-thumb]:bg-gray-300
+    dark:[&::-webkit-scrollbar-track]:bg-neutral-700
+    dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500;
   }
 }
 
