@@ -51,38 +51,49 @@ function App() {
             Purrfect
           </h1>
 
-          <div className="flex items-center gap-4 p-3 rounded-full bg-black">
-            {/* User Photo */}
-            <img
-              className="rounded-full w-11 h-11 shrink-0"
-              src={user?.["photo_url"]}
-            />
+          {user ? (
+            <div className="flex items-center gap-4 p-3 bg-black rounded-full">
+              {/* User Photo */}
+              <img
+                className="rounded-full w-11 h-11 shrink-0"
+                src={user?.["photo_url"]}
+              />
 
-            <div className="flex flex-col min-w-0 min-h-0 text-sm grow pr-2">
-              {/* First and Last Name */}
-              <p className="font-bold text-purple-500 truncate">
-                {user?.["first_name"] || user?.["last_name"]
-                  ? `${user?.["first_name"] || ""} ${user?.["last_name"] || ""}`
-                  : " Telegram User"}
-              </p>
-
-              {/* Username */}
-              {user?.username ? (
-                <p onClick={copyUsername} className="text-yellow-500 truncate">
-                  @{user?.username}
+              <div className="flex flex-col min-w-0 min-h-0 pr-2 text-sm grow">
+                {/* First and Last Name */}
+                <p className="font-bold text-purple-500 truncate">
+                  {user?.["first_name"] || user?.["last_name"]
+                    ? `${user?.["first_name"] || ""} ${
+                        user?.["last_name"] || ""
+                      }`
+                    : " Telegram User"}
                 </p>
-              ) : null}
 
-              {/* User ID */}
-              <p onClick={copyUserId} className="truncate text-lime-500">
-                ID: {user?.id}
-              </p>
+                {/* Username */}
+                {user?.username ? (
+                  <p
+                    onClick={copyUsername}
+                    className="text-yellow-500 truncate"
+                  >
+                    @{user?.username}
+                  </p>
+                ) : null}
+
+                {/* User ID */}
+                <p onClick={copyUserId} className="truncate text-lime-500">
+                  ID: {user?.id}
+                </p>
+              </div>
             </div>
-          </div>
+          ) : (
+            <p className="p-2 text-sm text-center text-yellow-500 bg-black rounded-full">
+              Telegram Mini-Apps Automation Tool
+            </p>
+          )}
         </div>
 
         {/* Channel & Chat */}
-        <div className="flex justify-center items-center text-sm">
+        <div className="flex items-center justify-center text-sm">
           <div className="grid grid-cols-2 gap-2">
             <button
               onClick={openChannel}
