@@ -99,7 +99,7 @@ function App() {
               onClick={openChannel}
               className={cn(
                 "px-4 py-2 rounded-full",
-                "flex items-center gap-2",
+                "flex items-center justify-center gap-2",
                 "bg-purple-200 text-black"
               )}
             >
@@ -110,7 +110,7 @@ function App() {
               onClick={openChat}
               className={cn(
                 "px-4 py-2 rounded-full",
-                "flex items-center gap-2",
+                "flex items-center justify-center gap-2",
                 "bg-lime-200 text-black"
               )}
             >
