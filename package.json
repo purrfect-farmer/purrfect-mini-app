@@ -10,29 +10,29 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fontsource/turret-road": "^5.1.1",
-    "@tailwindcss/vite": "^4.0.8",
+    "@fontsource/turret-road": "^5.2.5",
+    "@tailwindcss/vite": "^4.0.9",
     "clsx": "^2.1.1",
     "copy-to-clipboard": "^3.3.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
-    "tailwind-merge": "^2.6.0"
+    "tailwind-merge": "^3.0.2"
   },
   "devDependencies": {
-    "@eslint/js": "^9.17.0",
-    "@tailwindcss/postcss": "^4.0.8",
-    "@types/react": "^19.0.3",
-    "@types/react-dom": "^19.0.2",
+    "@eslint/js": "^9.21.0",
+    "@tailwindcss/postcss": "^4.0.9",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
-    "eslint": "^9.17.0",
-    "eslint-plugin-react": "^7.37.3",
-    "eslint-plugin-react-hooks": "^5.1.0",
-    "eslint-plugin-react-refresh": "^0.4.16",
-    "globals": "^15.14.0",
-    "postcss": "^8.4.49",
-    "tailwindcss": "^4.0.8",
-    "vite": "^6.0.7",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.0.9",
+    "vite": "^6.2.0",
     "vite-imagetools": "^7.0.5"
   }
 }
