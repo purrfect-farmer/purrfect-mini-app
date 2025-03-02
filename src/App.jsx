@@ -100,7 +100,7 @@ function App() {
               className={cn(
                 "px-4 py-2 rounded-full",
                 "flex items-center gap-2",
-                "bg-purple-300 text-black"
+                "bg-purple-200 text-black"
               )}
             >
               <IoFlashOutline />
@@ -111,7 +111,7 @@ function App() {
               className={cn(
                 "px-4 py-2 rounded-full",
                 "flex items-center gap-2",
-                "bg-lime-300 text-black"
+                "bg-lime-200 text-black"
               )}
             >
               <IoChatbubblesOutline />
