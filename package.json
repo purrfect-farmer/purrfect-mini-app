@@ -12,28 +12,28 @@
   "dependencies": {
     "@fontsource/noto-sans": "^5.2.7",
     "@fontsource/turret-road": "^5.2.5",
-    "@tailwindcss/vite": "^4.0.9",
+    "@tailwindcss/vite": "^4.1.7",
     "clsx": "^2.1.1",
     "copy-to-clipboard": "^3.3.3",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
-    "tailwind-merge": "^3.0.2"
+    "tailwind-merge": "^3.3.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.21.0",
-    "@tailwindcss/postcss": "^4.0.9",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
-    "@vitejs/plugin-react": "^4.3.4",
-    "eslint": "^9.21.0",
-    "eslint-plugin-react": "^7.37.4",
+    "@eslint/js": "^9.27.0",
+    "@tailwindcss/postcss": "^4.1.7",
+    "@types/react": "^19.1.4",
+    "@types/react-dom": "^19.1.5",
+    "@vitejs/plugin-react": "^4.4.1",
+    "eslint": "^9.27.0",
+    "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^16.0.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.1.0",
     "postcss": "^8.5.3",
-    "tailwindcss": "^4.0.9",
-    "vite": "^6.2.0",
-    "vite-imagetools": "^7.0.5"
+    "tailwindcss": "^4.1.7",
+    "vite": "^6.3.5",
+    "vite-imagetools": "^7.1.0"
   }
 }
