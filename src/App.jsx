@@ -59,7 +59,7 @@ function App() {
                 src={user?.["photo_url"]}
               />
 
-              <div className="flex flex-col min-w-0 min-h-0 pr-2 text-sm grow">
+              <div className="flex flex-col min-w-0 min-h-0 pr-2 grow">
                 {/* First and Last Name */}
                 <p className="font-bold text-purple-500 truncate">
                   {user?.["first_name"] || user?.["last_name"]
@@ -86,14 +86,14 @@ function App() {
               </div>
             </div>
           ) : (
-            <p className="p-2 text-sm text-center text-yellow-500 bg-black rounded-full">
+            <p className="p-2 text-center text-yellow-500 bg-black rounded-full">
               Telegram Mini-Apps Automation Tool
             </p>
           )}
         </div>
 
         {/* Channel & Chat */}
-        <div className="flex items-center justify-center text-sm">
+        <div className="flex items-center justify-center">
           <div className="grid grid-cols-2 gap-2">
             <button
               onClick={openChannel}
