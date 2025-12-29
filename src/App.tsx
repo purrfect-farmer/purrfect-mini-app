@@ -8,6 +8,7 @@ import { cn } from "./lib/utils";
 import { HiSolidArrowUpRight } from "solid-icons/hi";
 import toast, { Toaster } from "solid-toast";
 
+/** Button Component */
 function Button(props: ComponentProps<"button">) {
   const [local, others] = splitProps(props, ["class"]);
   return (
@@ -22,6 +23,7 @@ function Button(props: ComponentProps<"button">) {
   );
 }
 
+/** Info Component */
 function Info(props: ComponentProps<"p">) {
   return <p {...props} class={cn("truncate cursor-pointer", props.class)} />;
 }
@@ -59,12 +61,12 @@ function App() {
 
   /** Open Channel */
   const openChannel = () => {
-    openTelegramLink("https://t.me/purrfect_community");
+    openTelegramLink(import.meta.env.VITE_APP_TELEGRAM_CHANNEL);
   };
 
   /** Open Chat */
   const openChat = () => {
-    openTelegramLink("https://t.me/purrfect_community_chat");
+    openTelegramLink(import.meta.env.VITE_APP_TELEGRAM_CHAT);
   };
 
   /** Configure Telegram App */
@@ -121,9 +123,10 @@ function App() {
             </div>
           </div>
 
-          {/* Channel & Chat */}
+          {/* Channel & Chat Buttons */}
           <div class="flex items-center justify-center">
             <div class="grid grid-cols-2 gap-2">
+              {/* Telegram Channel */}
               <Button
                 onClick={openChannel}
                 class={cn("bg-purple-200 text-black")}
@@ -131,6 +134,8 @@ function App() {
                 <IoFlashOutline />
                 Channel
               </Button>
+
+              {/* Telegram Group */}
               <Button onClick={openChat} class={cn("bg-lime-200 text-black")}>
                 <IoChatbubblesOutline />
                 Group
